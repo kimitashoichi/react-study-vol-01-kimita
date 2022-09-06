@@ -41,7 +41,7 @@ export const FormProduct: FC<Props> = ({ price, count, url, selectCount, setSele
 
   const generateOptions = () => {
     let options = [];
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i <= count; i++) {
       options.push(<option key={i}>{i}</option>)
     }
 
