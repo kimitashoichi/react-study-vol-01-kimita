@@ -23,14 +23,14 @@ export const FormProduct: FC<Props> = ({ price, count, url, selectCount, setSele
 
   useEffect(() => {
     changeStockText();
-  }, [])
+  }, [count])
 
   const changeStockText = () => {
     if (count >= 6) {
       setStockText(`${count}個`);
-    } else if (count <= 5) {
+    } else if (count <= 5 && count !== 0 ) {
       setStockText(MIDDLE_STOCK);
-    } else {
+    } else if (count === 0) {
       setStockText(NONE_STOCK);
     }
   }
